@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  sme_certificados:
+    image: ${DOCKER_REGISTRY-}smecertificados
+    container_name: "sme_certificados"
+    build:
+      context: .
+      dockerfile: SME_Certificados/Dockerfile
