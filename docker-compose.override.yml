@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+    sme_certificados:
+        volumes:
+            - '/srv/files/logs/:/tmp/logs/'
+            - '/srv/files/arquivos/:/tmp/arquivos/'
+        environment:
+            - SME_Certificados_Cs=server=server=x.x.x.x;database=xxxxx;uid=xxxxx;pwd=xxxxx;
+            - SME_Log_Certificados=/tmp/logs/
+            - SME_ArqTemp_Certificados=/tmp/arqtemp/
+            - SME_Caminho_Arquivos=/tmp/arquivos/
