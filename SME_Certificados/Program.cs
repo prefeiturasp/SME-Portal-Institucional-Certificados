@@ -1,7 +1,7 @@
 ﻿using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 using Microsoft.Extensions.Configuration;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using System.Text;
 using System.IO.Compression;
 
@@ -35,8 +35,8 @@ internal class Class
 
         sb.AppendLine("Acessou o diretório");
         var connetionString = config["SME_Certificados_Cs"];
-
-        using MySqlConnection cn = new(connetionString);
+        using MySqlConnection cn = new MySqlConnection(connetionString);
+       //using MySqlConnection cn = new(connetionString);
         cn.Open();
 
         foreach (var file in files)
